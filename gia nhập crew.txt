@@ -3,117 +3,94 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Đơn xin gia nhập TunGang</title>
+  <title>Ðơn xin gia nhập TunGang</title>
   <style>
-    @import url('https://i.pinimg.com/736x/26/b8/4f/26b84fcb4a7f055b267d4d9d060dbba1.jpg');
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-    body {
+    body{
       font-family:'Poppins',sans-serif;
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #000; /* tạm nền đen, sẽ thay bằng ảnh mưa */
-      overflow: hidden;
-      position: relative;
+      background:#0f0f16;
+      margin:0;
+      padding:24px;
+      color:#eee;
     }
 
-    #rain-container {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
+    .container{
+      max-width:650px;
+      margin:0 auto;
+      background:#1a1a27;
+      padding:32px;
+      border-radius:20px;
+      box-shadow:0 8px 40px rgba(0,0,0,0.4);
+      border:1px solid #2c2c3a;
+      animation:fadeIn .5s ease;
     }
 
-    #rain-canvas {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(20px);} 
+      to{opacity:1; transform:translateY(0);} 
     }
 
-    .container {
-      position: relative;
-      z-index: 2;
-      max-width: 650px;
-      margin: 40px auto;
-      background: rgba(26, 26, 39, 0.9);
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      border: 1px solid #2c2c3a;
-      animation: fadeIn .5s ease;
+    h2{
+      text-align:center;
+      margin-top:0;
+      font-size:28px;
+      color:#7ab8ff;
+      text-shadow:0 0 12px #005eff;
+      letter-spacing:1px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    label{
+      font-weight:600;
+      margin-top:16px;
+      display:block;
+      color:#9bb3d1;
+      font-size:15px;
     }
 
-    h2 {
-      text-align: center;
-      margin-top: 0;
-      font-size: 28px;
-      color: #7ab8ff;
-      text-shadow: 0 0 12px #005eff;
-      letter-spacing: 1px;
+    input,textarea,select{
+      width:100%;
+      padding:12px;
+      margin-top:6px;
+      border:1px solid #2f3a4d;
+      border-radius:12px;
+      font-size:15px;
+      background:#111522;
+      color:#e5e9f5;
+      transition:0.2s;
     }
 
-    label {
-      font-weight: 600;
-      margin-top: 16px;
-      display: block;
-      color: #9bb3d1;
-      font-size: 15px;
+    input:focus,textarea:focus,select:focus{
+      border-color:#4d9cff;
+      box-shadow:0 0 10px #4d9cff88;
+      outline:none;
     }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #2f3a4d;
-      border-radius: 12px;
-      font-size: 15px;
-      background: #111522;
-      color: #e5e9f5;
-      transition: 0.2s;
+    button{
+      margin-top:28px;
+      width:100%;
+      padding:14px;
+      font-size:18px;
+      font-weight:600;
+      background:linear-gradient(135deg,#3b82f6,#2563eb);
+      color:#fff;
+      border:none;
+      border-radius:14px;
+      cursor:pointer;
+      box-shadow:0 4px 22px rgba(37,99,235,0.45);
+      transition:0.28s;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: #4d9cff;
-      box-shadow: 0 0 10px #4d9cff88;
-      outline: none;
-    }
-
-    button {
-      margin-top: 28px;
-      width: 100%;
-      padding: 14px;
-      font-size: 18px;
-      font-weight: 600;
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
-      color: #fff;
-      border: none;
-      border-radius: 14px;
-      cursor: pointer;
-      box-shadow: 0 4px 22px rgba(37,99,235,0.45);
-      transition: 0.28s;
-    }
-
-    button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 30px rgba(37,99,235,0.7);
+    button:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 30px rgba(37,99,235,0.7);
     }
   </style>
 </head>
 <body>
-  <div id="rain-container">
-    <canvas id="rain-canvas"></canvas>
-  </div>
-
   <div class="container">
-    <h2>ĐƠN XIN GIA NHẬP TUNGANG</h2>
-    <form id="apply-form">
+    <h2>ÐON XIN GIA NHẬP TUNGANG</h2>
+    <form>
       <label>Username Roblox</label>
       <input type="text" placeholder="Nhập username rô lốc" required />
 
@@ -123,65 +100,29 @@
       <label>Bounty hiện tại</label>
       <input type="text" placeholder="Ví dụ: 2.5M bounty " />
 
-      <label>Kinh nghiệm chơi</label>
+      <label>Kinh nghiệm choi</label>
       <textarea rows="3" placeholder="Mô tả kinh nghiệm của bạn…"></textarea>
 
-      <label>Lý do muốn gia nhập đội</label>
-      <textarea rows="3" placeholder="Hãy cho biết vì sao bạn muốn tham gia đội game…" required></textarea>
+      <label>Lý do muốn tham gia TUNGANG</label>
+      <textarea rows="3" placeholder="Hãy cho biết vì sao bạn muốn tham gia TUNGANG…" required></textarea>
 
       <label>Thời gian online mỗi ngày</label>
       <input type="text" placeholder="Ví dụ: 2–4 giờ/ngày" />
 
-      <button type="submit">Gửi đơn</button>
-    </form>
-  </div>
-
-  <!-- Thư viện RainyDay.js từ CDN -->  
-  <script src="https://cdn.jsdelivr.net/npm/rainyday.js@0.1.7/rainyday.min.js"></script> <!-- từ jsDelivr :contentReference[oaicite:0]{index=0} -->
-  <script>
-    window.addEventListener('load', () => {
-      const canvas = document.getElementById('rain-canvas');
-      const rainContainer = document.getElementById('rain-container');
-
-      // Tạo 1 ảnh ẩn để làm nền mưa (có thể thay bằng ảnh của bạn)
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      img.src = "https://i.pinimg.com/736x/26/b8/4f/26b84fcb4a7f055b267d4d9d060dbba1.jpg"; // link ảnh mẫu — bạn thay bằng ảnh thật
-      img.onload = () => {
-        // khởi engine
-        const engine = new RainyDay({
-          image: img,
-          parentElement: rainContainer,
-          canvas: canvas,
-          blur: 10,
-          opacity: 0.6,
-          enableCollisions: true,
-          fps: 24,
-          gravityThreshold: 3,
-          gravityAngle: Math.PI / 2
-        });
-
-        // cấu hình rain: các lớp giọt
-        engine.rain([
-          [2, 3, 8000],
-          [3, 5, 0.9],
-          [6, 2, 1]
-        ], 100);
-      };
-    });
-
-    // Webhook form gửi Discord (như code cũ)
-    const form = document.getElementById('apply-form');
+      <button n>Gửi don</button>
+      <script>
+    const form = document.querySelector('form');
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
       const inputs = form.querySelectorAll('input, textarea, select');
       const data = {};
       inputs.forEach(i => data[i.previousElementSibling?.innerText] = i.value);
 
-      const webhook = "YOUR_WEBHOOK_URL";
+      const webhook = "https://discord.com/api/webhooks/1442493251612315875/NvSYZw6X8olVnyelRQ5hNh9JBh86fZOsFN23XfKht_LxJdnDRo7DBFK8PgqoE7fzCS7v";
 
       const payload = {
-        content: "📨 **Đơn xin gia nhập đội game mới**",
+        content: "?? **Ðơn xin gia nhập TUNGANG**",
         embeds: [
           {
             title: "Thông tin người đăng ký",
@@ -198,9 +139,10 @@
         body: JSON.stringify(payload)
       });
 
-      alert("Đã gửi đơn thành công!");
-      form.reset();
+      alert("Ðã gửi đơn thành công!");
     });
   </script>
+</form>
+  </div>
 </body>
 </html>
